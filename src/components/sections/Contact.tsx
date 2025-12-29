@@ -7,6 +7,25 @@ import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { contactChannels } from '@/utils/portfolio-data'
 
+const CONTACT_EMAIL = 'robsonjosecorreacarvalho@gmail.com'
+const CONTACT_SUBJECT = 'Possível colaboração técnica — Robson José'
+const CONTACT_BODY = `Olá Robson,
+
+Gostaria de conversar sobre um possível projeto de desenvolvimento fullstack.
+
+Algumas informações iniciais:
+- Contexto do projeto:
+- Desafio técnico principal:
+- Objetivos esperados:
+- Prazo estimado (se houver):
+
+Fico no aguardo.
+Obrigado!`
+
+const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${encodeURIComponent(
+  CONTACT_EMAIL,
+)}&su=${encodeURIComponent(CONTACT_SUBJECT)}&body=${encodeURIComponent(CONTACT_BODY)}`
+
 export const Contact = () => (
   <section id="contact" className="py-20">
     <Container className="space-y-12">
@@ -60,7 +79,9 @@ export const Contact = () => (
                 </p>
               </div>
               <Button
-                href="mailto:robsonjosecorreacarvalho@gmail.com?subject=Explorar%20colabora%C3%A7%C3%A3o%20com%20CodeMaster&body=Ol%C3%A1%20Robson%2C%0A%0AGostaria%20de%20conversar%20sobre%20um%20poss%C3%ADvel%20projeto%20envolvendo%20backend%20e%20automata%C3%A7%C3%B5es.%0A%0ADetalhes%20iniciais%3A%0A-%20Contexto%3A%20%0A-%20Desafio%20principal%3A%20%0A-%20Objetivos%3A%20%0A%0AObrigad@%21"
+                href={GMAIL_COMPOSE_URL}
+                target="_blank"
+                rel="noreferrer"
                 className="self-start"
               >
                 Iniciar conversa

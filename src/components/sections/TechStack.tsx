@@ -12,7 +12,8 @@ const proficiencyMap = {
   intermediate: 'Intermediário',
   proficient: 'Proficiente',
   beginner: 'Iniciante',
-} as const
+  basic: 'Básico',
+} as const satisfies Record<string, string>
 
 export const TechStack = () => (
   <section id="tech" className="py-20">

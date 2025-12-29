@@ -1,4 +1,4 @@
-import { Globe, Mail, MessageCircle, type LucideIcon } from 'lucide-react'
+import { Mail, MessageCircle, PhoneCall, type LucideIcon } from 'lucide-react'
 
 export type Proficiency =
   | 'basic'
@@ -212,10 +212,10 @@ export const contactChannels: ContactChannel[] = [
     icon: Mail,
   },
   {
-    label: 'Portfólio',
-    value: 'port-folio-two-indol.vercel.app',
-    href: 'https://port-folio-two-indol.vercel.app',
-    icon: Globe,
+    label: 'WhatsApp',
+    value: '+55 22 99228-2700',
+    href: 'https://wa.me/5522992282700?text=Ol%C3%A1%20Robson%2C%20gostaria%20de%20conversar%20sobre%20um%20poss%C3%ADvel%20projeto%20de%20desenvolvimento%20fullstack.',
+    icon: PhoneCall,
   },
   {
     label: 'Discord',
