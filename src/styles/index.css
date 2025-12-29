@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface-900 text-surface-50 font-sans antialiased;
+}
+
+::selection {
+  @apply bg-primary-400 text-surface-900;
+}
+
+.dark body {
+  @apply bg-surface-900 text-surface-50;
+}
+
+.light body {
+  @apply bg-surface-50 text-surface-900;
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 9999px;
+  background: linear-gradient(120deg, rgba(109, 61, 250, 0.65), rgba(41, 197, 255, 0.55));
+  padding: 1px;
+}
+
+.gradient-border > span {
+  display: block;
+  border-radius: 9999px;
+  background: rgba(15, 16, 24, 0.8);
+  padding: 0.25rem 0.75rem;
+}
+
+.light .gradient-border > span {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.pattern-mask {
+  mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+}
