@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
-import { Button } from '@/components/ui/Button'
 import { useSectionObserver } from '@/hooks/useSectionObserver'
 import { cn } from '@/utils/cn'
 import { navItems } from '@/utils/portfolio-data'
@@ -50,14 +49,14 @@ export const Header = () => {
           ))}
         </nav>
         <div className="md:hidden">
-          <Button
-            variant="ghost"
-            className="h-10 w-10 border-white/10 p-0"
+          <button
+            type="button"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-transparent text-white/80 transition-colors duration-200 hover:border-primary-400/60 hover:text-white"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label="Alternar navegação"
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+          </button>
         </div>
       </div>
       <AnimatePresence>
