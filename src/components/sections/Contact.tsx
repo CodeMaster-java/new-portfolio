@@ -28,7 +28,7 @@ const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${
 
 export const Contact = () => (
   <section id="contact" className="py-20">
-    <Container className="space-y-12">
+    <Container className="space-y-12 overflow-hidden">
       <SectionHeading
         label="Contato"
         title="Vamos construir o que vem a seguir."
@@ -51,7 +51,7 @@ export const Contact = () => (
                     href={channel.href}
                     target={channel.href.startsWith('http') ? '_blank' : undefined}
                     rel={channel.href.startsWith('http') ? 'noreferrer' : undefined}
-                    className="mt-2 block text-lg font-semibold text-white hover:text-primary-200"
+                    className="mt-2 block break-all text-lg font-semibold text-white hover:text-primary-200"
                   >
                     {channel.value}
                   </a>
