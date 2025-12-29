@@ -115,7 +115,7 @@ export const projectItems: ProjectItem[] = [
     description:
       'Portfólio pessoal com navegação fluida, tema claro/escuro sincronizado, traduções em tempo real e animações discretas otimizadas para diferentes dispositivos.',
     tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Context API'],
-    role: 'Responsável pelo projeto',
+    role: 'Autor · Fullstack',
     year: '2024',
     link: 'https://github.com/CodeMaster-java/PortFolio',
   },
@@ -124,7 +124,7 @@ export const projectItems: ProjectItem[] = [
     description:
       'Plataforma corporativa de ponto eletrônico com autenticação em múltiplos níveis, dashboards em tempo real, notificações automáticas e exportações em PDF/CSV.',
     tech: ['React', 'TypeScript', 'PHP', 'MySQL', 'Tailwind CSS', 'Vite', 'Chart.js'],
-    role: 'Líder técnico · Fullstack',
+    role: 'Autor · Fullstack',
     year: '2025',
   },
   {
@@ -132,7 +132,7 @@ export const projectItems: ProjectItem[] = [
     description:
       'Aplicativo desktop para orquestrar bots Discord com logs em tempo real, diagnósticos automáticos, atalhos de teclado e gerenciamento centralizado de múltiplos perfis.',
     tech: ['Electron', 'Node.js', 'JavaScript', 'Python', 'CSS', 'HTML'],
-    role: 'Autor e mantenedor',
+    role: 'Autor · Fullstack',
     year: '2025',
     link: 'https://github.com/CodeMaster-java/BotDeck',
   },
@@ -152,7 +152,7 @@ export const projectItems: ProjectItem[] = [
         'MySQL',
         'Zod'
     ],
-    role: 'Autor e mantenedor · Fullstack',
+    role: 'Autor · Fullstack',
     year: '2025',
     },
 ]
