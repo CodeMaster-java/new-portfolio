@@ -20,7 +20,7 @@ export const Card = ({ className, as: As = 'div', children }: CardProps) => {
       <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
         <div className="pattern-mask absolute inset-0 translate-y-4 bg-[radial-gradient(circle_at_center,_rgba(109,61,250,0.14),_transparent_65%)]" />
       </div>
-      <div className="relative flex h-full flex-col gap-5 p-6 md:p-8">{children}</div>
+      <div className="relative flex flex-col gap-5 p-6 md:p-8">{children}</div>
     </Component>
   )
 }

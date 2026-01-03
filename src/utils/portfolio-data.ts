@@ -23,6 +23,7 @@ export type ProjectItem = {
   role: string
   year: string
   link?: string
+  demo?: string
 }
 
 export type ExperienceHighlight = {
@@ -70,8 +71,8 @@ export const stackCategories: StackCategory[] = [
       { label: 'Express', proficiency: 'advanced' },
       { label: 'Java', proficiency: 'intermediate' },
       { label: 'C#', proficiency: 'intermediate' },
-      { label: 'Lua', proficiency: 'proficient' },
       { label: 'Zod', proficiency: 'advanced' },
+      { label: 'Lua', proficiency: 'proficient' },
       { label: 'REST · Integrations', proficiency: 'expert' },
     ],
   },
@@ -82,7 +83,14 @@ export const stackCategories: StackCategory[] = [
       { label: 'React', proficiency: 'expert' },
       { label: 'Next.js', proficiency: 'advanced' },
       { label: 'TypeScript', proficiency: 'expert' },
+      { label: 'JavaScript', proficiency: 'expert' },
       { label: 'Tailwind CSS', proficiency: 'advanced' },
+      { label: 'CSS', proficiency: 'advanced' },
+      { label: 'HTML', proficiency: 'expert' },
+      { label: 'Vite', proficiency: 'advanced' },
+      { label: 'Framer Motion', proficiency: 'advanced' },
+      { label: 'Zustand', proficiency: 'advanced' },
+      { label: 'Context API', proficiency: 'advanced' },
       { label: 'Chart.js', proficiency: 'proficient' },
       { label: 'styled-components', proficiency: 'advanced' },
       { label: 'Recharts', proficiency: 'proficient' },
@@ -94,6 +102,11 @@ export const stackCategories: StackCategory[] = [
     tools: [
       { label: 'Electron', proficiency: 'advanced' },
       { label: 'React Native', proficiency: 'proficient' },
+      { label: 'Kotlin', proficiency: 'intermediate' },
+      { label: 'Jetpack Compose', proficiency: 'intermediate' },
+      { label: 'Room', proficiency: 'intermediate' },
+      { label: 'Hilt', proficiency: 'intermediate' },
+      { label: 'Coroutines', proficiency: 'advanced' },
     ],
   },
   {
@@ -104,6 +117,8 @@ export const stackCategories: StackCategory[] = [
       { label: 'SQLite', proficiency: 'proficient' },
       { label: 'Git & GitHub', proficiency: 'expert' },
       { label: 'Linux', proficiency: 'intermediate' },
+      { label: 'Docker', proficiency: 'advanced' },
+      { label: 'Gradle', proficiency: 'intermediate' },
       { label: 'CI/CD automation', proficiency: 'advanced' },
     ],
   },
@@ -118,6 +133,16 @@ export const projectItems: ProjectItem[] = [
     role: 'Autor · Fullstack',
     year: '2024',
     link: 'https://github.com/CodeMaster-java/PortFolio',
+  },
+  {
+    name: 'Barbearia Pro',
+    description:
+      'Plataforma de agendamento para barbearias com landing responsiva, storytelling animado, vitrine dinâmica de serviços, mock data sincronizado e jornada completa de autenticação e reservas com microinterações suaves.',
+    tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Zustand'],
+    role: 'Autor · Frontend',
+    year: '2025',
+    link: 'https://github.com/CodeMaster-java/BarbeariaSite',
+    demo: 'https://barbearia-site-zeta.vercel.app/',
   },
   {
     name: 'WorkTime System · Controle de Ponto',
@@ -136,7 +161,15 @@ export const projectItems: ProjectItem[] = [
     year: '2025',
     link: 'https://github.com/CodeMaster-java/BotDeck',
   },
-    {
+  {
+    name: 'MoneyFlow Finance Manager',
+    description:
+      'Aplicativo Android para finanças pessoais com login biométrico, gerenciamento resiliente de sessões, persistência local via Room e fluxos Compose otimizados para registrar e acompanhar transações com segurança.',
+    tech: ['Kotlin', 'Jetpack Compose', 'Room', 'Hilt', 'Coroutines'],
+    role: 'Autor · Mobile',
+    year: '2025',
+  },
+  {
     name: 'Cafe Hora Certa · Gestão Operacional',
     description:
         'Painel operacional para cafeterias com KPIs de faturamento diário/mensal, gráficos Recharts interativos, módulo POS com catálogo filtrável, carrinho lateral e modal de checkout, gestão de estoque com busca/categorias, relatórios com exportações PDF/CSV e gerenciamento completo de usuários com avatars, autenticação por sessões e trilhas de auditoria.',
