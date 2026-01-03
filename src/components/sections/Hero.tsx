@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { motion } from 'framer-motion'
 import { ArrowDownRight, CircleArrowOutUpRight } from 'lucide-react'
 
@@ -11,10 +13,22 @@ const fadeVariant = {
   visible: { opacity: 1, y: 0 },
 }
 
-export const Hero = () => (
-  <section
+const profileImageUrl = (() => {
+  try {
+    return new URL('../../assets/perfil.jpeg', import.meta.url).href
+  } catch (error) {
+    return null
+  }
+})()
+
+export const Hero = () => {
+  const [imageError, setImageError] = useState(false)
+  const showProfileImage = profileImageUrl && !imageError
+
+  return (
+    <section
     id="hero"
-    className="relative w-full overflow-hidden bg-surface-900 pb-24 pt-20 md:pb-32 md:pt-28"
+    className="relative w-full overflow-hidden bg-surface-900 pb-24 pt-24 md:pb-32 md:pt-28"
   >
     <div className="absolute inset-0 bg-hero-grid bg-[length:140px_140px] opacity-30" />
     <div className="absolute -left-24 top-20 h-64 w-64 rounded-full bg-primary-500/20 blur-3xl" />
@@ -96,9 +110,25 @@ export const Hero = () => (
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="relative flex items-center justify-center"
+        className="relative flex items-center justify-center pt-20 md:justify-center"
       >
         <div className="relative flex h-[420px] w-full max-w-[420px] items-center justify-center rounded-[3rem] border border-white/5 bg-surface-800/50 p-10 shadow-[0_45px_80px_-40px_rgba(0,0,0,0.8)] backdrop-blur">
+          <div className="absolute -top-16 left-1/2 -translate-x-1/2">
+            <div className="overflow-hidden rounded-full border border-white/10 bg-surface-900/90 p-[4px] shadow-[0_25px_50px_-25px_rgba(0,0,0,0.6)]">
+              {showProfileImage ? (
+                <img
+                  src={profileImageUrl}
+                  alt="Foto de Robson José"
+                  className="h-24 w-24 rounded-full object-cover md:h-28 md:w-28"
+                  onError={() => setImageError(true)}
+                />
+              ) : (
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-surface-800 text-lg font-semibold text-white/70 md:h-28 md:w-28">
+                  RJ
+                </div>
+              )}
+            </div>
+          </div>
           <div className="absolute inset-0 -z-10 rounded-[3rem] border border-white/10" />
 
           <div className="flex flex-col items-center gap-6 text-center">
@@ -126,4 +156,5 @@ export const Hero = () => (
       </motion.div>
     </Container>
   </section>
-)
+  )
+}
