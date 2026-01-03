@@ -117,7 +117,7 @@ export const stackCategories: StackCategory[] = [
       { label: 'SQLite', proficiency: 'proficient' },
       { label: 'Git & GitHub', proficiency: 'expert' },
       { label: 'Linux', proficiency: 'intermediate' },
-      { label: 'Docker', proficiency: 'advanced' },
+      { label: 'Docker', proficiency: 'intermediate' },
       { label: 'Gradle', proficiency: 'intermediate' },
       { label: 'CI/CD automation', proficiency: 'advanced' },
     ],
