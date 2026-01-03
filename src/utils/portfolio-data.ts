@@ -72,7 +72,6 @@ export const stackCategories: StackCategory[] = [
       { label: 'Java', proficiency: 'intermediate' },
       { label: 'C#', proficiency: 'intermediate' },
       { label: 'Zod', proficiency: 'advanced' },
-      { label: 'Lua', proficiency: 'proficient' },
       { label: 'REST · Integrations', proficiency: 'expert' },
     ],
   },
@@ -107,6 +106,17 @@ export const stackCategories: StackCategory[] = [
       { label: 'Room', proficiency: 'intermediate' },
       { label: 'Hilt', proficiency: 'intermediate' },
       { label: 'Coroutines', proficiency: 'intermediate' },
+    ],
+  },
+  {
+    name: 'Games & Mods',
+    description: 'Criando experiências customizadas dentro de engines existentes, com foco em usabilidade e tooling para jogadores.',
+    tools: [
+      { label: 'Lua', proficiency: 'proficient' },
+      { label: 'Project Zomboid Modding', proficiency: 'proficient' },
+      { label: 'UI/UX In-Game', proficiency: 'advanced' },
+      { label: 'Localization', proficiency: 'advanced' },
+      { label: 'Steam Workshop tooling', proficiency: 'intermediate' },
     ],
   },
   {
@@ -168,6 +178,16 @@ export const projectItems: ProjectItem[] = [
     tech: ['Kotlin', 'Jetpack Compose', 'Room', 'Hilt', 'Coroutines'],
     role: 'Autor · Mobile',
     year: '2025',
+  },
+  {
+    name: 'Zed Toolbox',
+    description:
+      'Mod singleplayer para Project Zomboid com menu de cheats completo: spawn instantâneo, favoritos persistentes, presets configuráveis, utilitários de sobrevivência e interface multilíngue responsiva.',
+    tech: ['Lua', 'Project Zomboid Modding', 'UI/UX In-Game', 'Localization'],
+    role: 'Autor · Fullstack',
+    year: '2025',
+    link: 'https://github.com/CodeMaster-java/ZedToolbox',
+    demo: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3623287081',
   },
   {
     name: 'Cafe Hora Certa · Gestão Operacional',
