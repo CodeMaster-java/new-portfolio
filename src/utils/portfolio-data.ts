@@ -106,7 +106,7 @@ export const stackCategories: StackCategory[] = [
       { label: 'Jetpack Compose', proficiency: 'intermediate' },
       { label: 'Room', proficiency: 'intermediate' },
       { label: 'Hilt', proficiency: 'intermediate' },
-      { label: 'Coroutines', proficiency: 'advanced' },
+      { label: 'Coroutines', proficiency: 'intermediate' },
     ],
   },
   {
