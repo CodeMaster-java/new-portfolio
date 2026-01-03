@@ -1,7 +1,7 @@
-import { useState } from 'react'
 
 import { motion } from 'framer-motion'
 import { ArrowDownRight, CircleArrowOutUpRight } from 'lucide-react'
+import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Chip } from '@/components/ui/Chip'
@@ -16,7 +16,7 @@ const fadeVariant = {
 const profileImageUrl = (() => {
   try {
     return new URL('../../assets/perfil.jpeg', import.meta.url).href
-  } catch (error) {
+  } catch {
     return null
   }
 })()
