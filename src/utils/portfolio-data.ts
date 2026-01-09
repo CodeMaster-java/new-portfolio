@@ -152,7 +152,8 @@ export const projectItems: ProjectItem[] = [
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     role: 'Autor · Frontend',
     year: '2026',
-    link: 'https://github.com/CodeMaster-java/template-loadingpage-bot',
+    link: 'https://github.com/CodeMaster-java/astrabot-loadingpage.git',
+    demo: 'https://astrabot-loadingpage.vercel.app/',
   },
   {
     name: 'YouTube Converter (Electron + Python)',
