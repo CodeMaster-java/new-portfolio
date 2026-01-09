@@ -68,6 +68,7 @@ export const stackCategories: StackCategory[] = [
     tools: [
       { label: 'Node.js', proficiency: 'expert' },
       { label: 'Python', proficiency: 'expert' },
+      { label: 'FastAPI', proficiency: 'advanced' },
       { label: 'Express', proficiency: 'advanced' },
       { label: 'Java', proficiency: 'intermediate' },
       { label: 'C#', proficiency: 'intermediate' },
@@ -90,6 +91,7 @@ export const stackCategories: StackCategory[] = [
       { label: 'Framer Motion', proficiency: 'advanced' },
       { label: 'Zustand', proficiency: 'advanced' },
       { label: 'Context API', proficiency: 'advanced' },
+      { label: 'Zod', proficiency: 'advanced' },
       { label: 'Chart.js', proficiency: 'proficient' },
       { label: 'styled-components', proficiency: 'advanced' },
       { label: 'Recharts', proficiency: 'proficient' },
@@ -132,9 +134,35 @@ export const stackCategories: StackCategory[] = [
       { label: 'CI/CD automation', proficiency: 'advanced' },
     ],
   },
+  {
+    name: 'Tooling & Media',
+    description: 'Automação de downloads, encoding e pipelines de assets multimídia.',
+    tools: [
+      { label: 'FFmpeg', proficiency: 'proficient' },
+      { label: 'yt-dlp', proficiency: 'proficient' },
+    ],
+  },
 ]
 
 export const projectItems: ProjectItem[] = [
+  {
+    name: 'Astra Bot Loading Page (Next.js)',
+    description:
+      'Landing/loading de portfolio para bot Discord com métricas vivas, timeline de inicialização, skeletons reais, micro-motions, sparkline de latência e painel de comandos com busca, hotkeys e filtros.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    role: 'Autor · Frontend',
+    year: '2026',
+    link: 'https://github.com/CodeMaster-java/template-loadingpage-bot',
+  },
+  {
+    name: 'YouTube Converter (Electron + Python)',
+    description:
+      'App desktop para download/conversão de vídeos do YouTube com backend FastAPI/yt-dlp, UI Electron, seleção de pasta, miniatura ao colar link, progresso/cancelamento e suporte a MP3/MP4.',
+    tech: ['Electron', 'Node.js', 'FastAPI', 'Python', 'yt-dlp', 'FFmpeg'],
+    role: 'Autor · Fullstack',
+    year: '2025',
+    link: 'https://github.com/CodeMaster-java/YoutubeConvert',
+  },
   {
     name: 'Meu Primeiro Portfólio',
     description:
