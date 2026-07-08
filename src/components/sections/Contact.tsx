@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
 
 import { motion } from 'framer-motion'
 import { SendHorizonal } from 'lucide-react'
+import { useEffect } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
