@@ -5,7 +5,7 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes, PropsWithChildren } fr
 type Variant = 'primary' | 'secondary' | 'ghost'
 
 const baseStyles =
-  'inline-flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-0'
+  'inline-flex min-h-11 items-center gap-2 rounded-full border border-transparent px-5 py-2.5 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-0'
 
 const variantStyles: Record<Variant, string> = {
   primary:

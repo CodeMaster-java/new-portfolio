@@ -29,7 +29,7 @@ export const Footer = () => (
             href={link.href}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-white/60 transition-colors hover:border-primary-400/60 hover:text-white"
+            className="flex min-h-11 items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-white/60 transition-colors hover:border-primary-400/60 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
           >
             <link.icon className="h-4 w-4" />
             {link.label}

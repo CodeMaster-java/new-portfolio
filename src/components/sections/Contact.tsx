@@ -49,7 +49,7 @@ export const Contact = () => {
         <SectionHeading
           label="Contato"
           title="Vamos construir o que vem a seguir."
-          description="Disponível para posições sêniores focadas em backend, consultorias e colaborações onde clareza e craft importam."
+          description="Disponível para posições sêniores focadas em backend, consultorias e projetos onde clareza e cuidado técnico importam."
         />
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
           <motion.div
@@ -68,7 +68,7 @@ export const Contact = () => {
                       href={channel.href}
                       target={channel.href.startsWith('http') ? '_blank' : undefined}
                       rel={channel.href.startsWith('http') ? 'noreferrer' : undefined}
-                      className="mt-2 block break-all text-lg font-semibold text-white hover:text-primary-200"
+                      className="mt-2 block break-all rounded text-lg font-semibold text-white hover:text-primary-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
                     >
                       {channel.value}
                     </a>
@@ -111,7 +111,7 @@ export const Contact = () => {
                 <div className="space-y-4">
                   <p className="text-sm uppercase tracking-[0.3em] text-white/40">Alinhamento de colaboração</p>
                   <p className="text-base leading-relaxed text-white/60">
-                    Eu prospero liderando a estratégia de backend de produtos ambiciosos, conectando isso a experiências bem desenhadas e ferramental sólido para o time.
+                    Gosto de liderar a estratégia de backend em produtos ambiciosos, conectando isso a boas experiências de uso e um ferramental sólido para o time.
                   </p>
                   <p className="text-base leading-relaxed text-white/60">
                     Vamos conversar se você precisa de sistemas automatizados, modernização de plataformas ou uma liderança que conecte arquitetura e UX sem fricção.

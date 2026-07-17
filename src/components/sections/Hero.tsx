@@ -52,8 +52,8 @@ export const Hero = () => {
           variants={fadeVariant}
           className="text-balance text-4xl font-semibold leading-tight text-white md:text-5xl"
         >
-          Construo ecossistemas resilientes que permitem produtos escalarem
-          sem comprometer a experiência do time técnico.
+          Construo backends confiáveis que escalam junto com o produto —
+          sem virar dor de cabeça pra quem mantém depois.
         </motion.h1>
 
         <motion.p
@@ -63,8 +63,8 @@ export const Hero = () => {
           Sou <strong className="text-white/90">Robson José</strong>, também conhecido como{' '}
           <strong className="text-white/90">CodeMaster</strong> — desenvolvedor fullstack
           com foco em backend. Atuo na arquitetura de APIs, automações e
-          soluções multiplataforma onde confiabilidade, clareza e performance
-          caminham juntas.
+          soluções multiplataforma, priorizando confiabilidade, clareza e
+          performance.
         </motion.p>
 
         <motion.div variants={fadeVariant} className="flex flex-wrap items-center gap-4">
@@ -139,9 +139,8 @@ export const Hero = () => {
             </div>
 
             <p className="text-balance text-lg leading-relaxed text-white/70">
-              Arquiteturas backend-first orientadas a produto. Da
-              orquestração de serviços a interfaces estratégicas,
-              cada camada é projetada com propósito.
+              Do banco de dados à interface — cada camada construída
+              para durar e ser fácil de manter.
             </p>
 
             <div className="flex items-center gap-4 text-sm text-white/50">

@@ -10,13 +10,13 @@ import { experienceHighlights } from '@/utils/portfolio-data'
 const signalHighlights = [
   {
     icon: Gauge,
-    title: 'Rituais de performance',
-    description: 'Observabilidade desde o sprint zero. Dashboards e error budgets orientam as decisões de roadmap.',
+    title: 'Observabilidade desde o início',
+    description: 'Logs, métricas e dashboards fazem parte do projeto desde a primeira versão, não depois que algo quebra.',
   },
   {
     icon: Workflow,
     title: 'Automação em primeiro lugar',
-    description: 'Pipelines de CI/CD, gates de qualidade e checklists de release que mantêm as entregas serenas.',
+    description: 'Pipelines de CI/CD e checagens automáticas que tornam cada entrega mais previsível.',
   },
 ]
 
@@ -25,8 +25,8 @@ export const Experience = () => (
     <Container className="space-y-12">
       <SectionHeading
         label="Experiência"
-        title="Engenharia de entregas previsíveis entre times e plataformas."
-        description="Histórico liderando iniciativas intensivas em backend sem abrir mão de experiências premium."
+        title="Entregas previsíveis, em times e plataformas diferentes."
+        description="Histórico liderando projetos backend-first sem abrir mão de uma boa experiência de uso."
       />
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
         <div className="space-y-6">
@@ -75,12 +75,12 @@ export const Experience = () => (
                 <p className="text-sm uppercase tracking-[0.3em] text-white/40">Recorte de habilidades</p>
               </div>
               <p className="text-sm leading-relaxed text-white/60">
-                Experiência ao longo do full stack com forte ênfase em engenharia de backend, design de sistemas e decisões orientadas por dados. Confortável liderando squads, mentorando engenheiros e colaborando com design.
+                Atuação fullstack com ênfase em backend: arquitetura de sistemas, integrações e decisões guiadas por dados reais de uso. Confortável liderando projetos sozinho ou colaborando com times maiores.
               </p>
               <div className="grid gap-3 text-sm text-white/60">
                 <span>• Arquitetura: modelagem de domínio, sistemas orientados a eventos, plataformas de API</span>
-                <span>• Qualidade: testes automatizados, pipelines de entrega, mentalidade documentation-first</span>
-                <span>• Colaboração: workshops de discovery, facilitação de roadmap, mentoria técnica</span>
+                <span>• Qualidade: testes automatizados, pipelines de entrega, documentação como parte do processo</span>
+                <span>• Colaboração: alinhamento de escopo, mentoria técnica, comunicação direta com quem decide</span>
               </div>
             </div>
           </Card>

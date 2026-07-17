@@ -1,19 +1,12 @@
 import { Mail, MessageCircle, PhoneCall, type LucideIcon } from 'lucide-react'
 
-export type Proficiency =
-  | 'basic'
-  | 'intermediate'
-  | 'proficient'
-  | 'advanced'
-  | 'expert'
+import cdrLoginImage from '@/assets/projects/cdr-login.png'
+import gmpLoginImage from '@/assets/projects/gmp-login.png'
 
 export type StackCategory = {
   name: string
   description: string
-  tools: {
-    label: string
-    proficiency: Proficiency
-  }[]
+  tools: string[]
 }
 
 export type ProjectItem = {
@@ -24,6 +17,8 @@ export type ProjectItem = {
   year: string
   link?: string
   demo?: string
+  image?: string
+  client?: string
 }
 
 export type ExperienceHighlight = {
@@ -64,87 +59,163 @@ export const heroTags = [
 export const stackCategories: StackCategory[] = [
   {
     name: 'Backend & Sistemas',
-    description: 'Desenhando arquiteturas resilientes, integrações e pipelines de automação.',
-    tools: [
-      { label: 'Node.js', proficiency: 'expert' },
-      { label: 'Python', proficiency: 'expert' },
-      { label: 'FastAPI', proficiency: 'advanced' },
-      { label: 'Express', proficiency: 'advanced' },
-      { label: 'Java', proficiency: 'intermediate' },
-      { label: 'C#', proficiency: 'intermediate' },
-      { label: 'Zod', proficiency: 'advanced' },
-      { label: 'REST · Integrations', proficiency: 'expert' },
-    ],
+    description: 'Arquiteturas backend resilientes, integrações de sistemas e pipelines de automação.',
+    tools: ['Node.js', 'Python', 'FastAPI', 'Express', 'Java', 'C#', 'Zod', 'REST · Integrations'],
   },
   {
-    name: 'Experiência Frontend',
-    description: 'Criando interfaces expressivas com sistemas de componentes escaláveis.',
+    name: 'Frontend',
+    description: 'Interfaces expressivas construídas com sistemas de componentes escaláveis.',
     tools: [
-      { label: 'React', proficiency: 'expert' },
-      { label: 'Next.js', proficiency: 'advanced' },
-      { label: 'TypeScript', proficiency: 'expert' },
-      { label: 'JavaScript', proficiency: 'expert' },
-      { label: 'Tailwind CSS', proficiency: 'advanced' },
-      { label: 'CSS', proficiency: 'advanced' },
-      { label: 'HTML', proficiency: 'expert' },
-      { label: 'Vite', proficiency: 'advanced' },
-      { label: 'Framer Motion', proficiency: 'advanced' },
-      { label: 'Zustand', proficiency: 'advanced' },
-      { label: 'Context API', proficiency: 'advanced' },
-      { label: 'Zod', proficiency: 'advanced' },
-      { label: 'Chart.js', proficiency: 'proficient' },
-      { label: 'styled-components', proficiency: 'advanced' },
-      { label: 'Recharts', proficiency: 'proficient' },
+      'React',
+      'Next.js',
+      'TypeScript',
+      'JavaScript',
+      'Tailwind CSS',
+      'CSS',
+      'HTML',
+      'Vite',
+      'Framer Motion',
+      'Zustand',
+      'Context API',
+      'Zod',
+      'Chart.js',
+      'styled-components',
+      'Recharts',
     ],
   },
   {
     name: 'Desktop & Mobile',
-    description: 'Entregando experiências coesas além do navegador com núcleos compartilhados.',
-    tools: [
-      { label: 'Electron', proficiency: 'advanced' },
-      { label: 'React Native', proficiency: 'proficient' },
-      { label: 'Kotlin', proficiency: 'intermediate' },
-      { label: 'Jetpack Compose', proficiency: 'intermediate' },
-      { label: 'Room', proficiency: 'intermediate' },
-      { label: 'Hilt', proficiency: 'intermediate' },
-      { label: 'Coroutines', proficiency: 'intermediate' },
-    ],
+    description: 'Experiências coesas além do navegador, com núcleos de lógica compartilhados entre plataformas.',
+    tools: ['Electron', 'React Native', 'Kotlin', 'Jetpack Compose', 'Room', 'Hilt', 'Coroutines'],
   },
   {
     name: 'Games & Mods',
-    description: 'Criando experiências customizadas dentro de engines existentes, com foco em usabilidade e tooling para jogadores.',
-    tools: [
-      { label: 'Lua', proficiency: 'proficient' },
-      { label: 'Project Zomboid Modding', proficiency: 'proficient' },
-      { label: 'UI/UX In-Game', proficiency: 'advanced' },
-      { label: 'Localization', proficiency: 'advanced' },
-      { label: 'Steam Workshop tooling', proficiency: 'intermediate' },
-    ],
+    description:
+      'Experiências customizadas dentro de engines existentes, com foco em usabilidade e tooling para jogadores.',
+    tools: ['Lua', 'Project Zomboid Modding', 'UI/UX In-Game', 'Localization', 'Steam Workshop tooling'],
   },
   {
     name: 'Dados & Ops',
-    description: 'Cultura DevOps enxuta, observabilidade e entrega guiada por qualidade.',
-    tools: [
-      { label: 'MySQL', proficiency: 'advanced' },
-      { label: 'SQLite', proficiency: 'proficient' },
-      { label: 'Git & GitHub', proficiency: 'expert' },
-      { label: 'Linux', proficiency: 'intermediate' },
-      { label: 'Docker', proficiency: 'intermediate' },
-      { label: 'Gradle', proficiency: 'intermediate' },
-      { label: 'CI/CD automation', proficiency: 'advanced' },
-    ],
+    description: 'Observabilidade, DevOps enxuto e entrega guiada por qualidade.',
+    tools: ['MySQL', 'SQLite', 'Git & GitHub', 'Linux', 'Docker', 'Gradle', 'CI/CD automation'],
   },
   {
     name: 'Tooling & Media',
     description: 'Automação de downloads, encoding e pipelines de assets multimídia.',
-    tools: [
-      { label: 'FFmpeg', proficiency: 'proficient' },
-      { label: 'yt-dlp', proficiency: 'proficient' },
-    ],
+    tools: ['FFmpeg', 'yt-dlp'],
   },
 ]
 
 export const projectItems: ProjectItem[] = [
+  {
+    name: 'CDR · Controle de Reclamações',
+    description:
+      'Sistema de gestão de ocorrências para frotas de transporte (ônibus escolares e vermelhinhos) da Ouro Negro Transporte e Turismo. Centraliza o registro de reclamações e avarias por veículo, com painel Kanban em tempo real e sincronização automática de status via integração com sistema legado externo (Escalante Pro). Uma máquina de estados decide o status operacional com base nas ocorrências ativas, evitando conflito entre ações manuais e atualizações da API externa, com histórico auditável de cada transição. Arquitetura multi-tenant isola dados por empresa/base. Mais de 75 veículos cadastrados, com todo o fluxo auditado ponta a ponta.',
+    tech: [
+      'Next.js 16',
+      'React 19',
+      'TypeScript',
+      'Tailwind CSS v4',
+      'Drizzle ORM',
+      'PostgreSQL',
+      'Docker',
+      'GitHub Actions',
+    ],
+    role: 'Autor · Fullstack',
+    client: 'Ouro Negro Transporte e Turismo',
+    year: '2026',
+    image: cdrLoginImage,
+  },
+  {
+    name: 'Agente Royalties',
+    description:
+      'Agente automatizado que consulta diariamente a API da DAF (Banco do Brasil) para acompanhar royalties de petróleo devidos a municípios, calcula variações mês a mês e notifica a diretoria via WhatsApp — eliminando a conferência manual de repasses. O maior desafio foi o parsing dos relatórios da DAF: o valor da parcela vem numa linha sem data própria, exigindo rastrear e "herdar" a data de uma linha anterior de outra rubrica, além de ignorar totalizadores que repetem o mesmo padrão. Também exigiu idempotência (não reconsultar competências já concluídas), detecção de mudança real de valores — a DAF republica dados — e correção de um bug de competência no scheduler. Em produção monitorando 9 municípios do Rio de Janeiro, com suíte de 229+ testes unitários; substitui a checagem manual diária por notificação no WhatsApp com valor, data e variação percentual/histórica.',
+    tech: [
+      'Python 3.12',
+      'FastAPI',
+      'PostgreSQL 16',
+      'SQLAlchemy 2.0 (async)',
+      'Alembic',
+      'APScheduler',
+      'Pydantic Settings v2',
+      'Loguru',
+      'httpx',
+      'Docker',
+      'GitHub Actions',
+      'Evolution API',
+    ],
+    role: 'Autor · Backend',
+    client: 'Grit Tecnologia',
+    year: '2026',
+  },
+  {
+    name: 'grit-whatsapp-service · API interna',
+    description:
+      'Microserviço corporativo que abstrai completamente o provedor de WhatsApp (hoje Evolution API) dos sistemas internos da Grit Tecnologia — nenhum sistema cliente fala com o provedor diretamente, então trocar de provedor no futuro não quebra ninguém. Arquitetura em três camadas (Provider → Capability → Dispatch): a Capability Layer resolve o que uma instância suporta sem chamada de rede, e a Dispatch Layer valida e monta o plano de envio completo antes de qualquer ação de negócio ser executada. Pipeline assíncrono com idempotência determinística (dedup por sha256), filas dedicadas com dead-letter queue, e deploy próprio com rollback automático e healthcheck de todos os componentes (containers, Postgres, Redis, API, workers). Já consumido pelo Agente Royalties, com Financeiro, RH, OuroPortal e Vertex Workspace no roadmap. Ainda sem tráfego real de produção — como indicador de maturidade técnica: 50 commits, ~335 arquivos TypeScript, 13 migrations de banco e 67 arquivos de teste automatizado (~58% de cobertura).',
+    tech: [
+      'Node.js 22',
+      'TypeScript',
+      'Fastify 5',
+      'Zod',
+      'PostgreSQL',
+      'Prisma',
+      'Redis',
+      'BullMQ',
+      'Prometheus',
+      'Grafana',
+      'Docker',
+      'GitHub Actions',
+    ],
+    role: 'Autor · Backend',
+    client: 'Grit Tecnologia',
+    year: '2026',
+  },
+  {
+    name: 'GMP Dashboard · Grit Messaging Platform',
+    description:
+      'Painel administrativo web da Grit Messaging Platform. Dá a times técnicos e operacionais da Grit Tecnologia visibilidade e controle sobre instâncias WhatsApp, filas, workers, mensagens, logs e métricas sem precisar acessar o backend diretamente. Consome a API do grit-whatsapp-service através de um client HTTP próprio com interceptors e autenticação por API Key/JWT. Migração progressiva de dados mockados para dados reais em tempo real (filas, throughput de workers), mantendo a UI consistente durante a transição — e contornando o bloqueio de pareamento de dispositivo por passkey/WebAuthn introduzido pelo WhatsApp, que impediu re-parear a instância dedicada nova e forçou manter a instância antiga compartilhada enquanto o problema era investigado.',
+    tech: [
+      'Next.js 15',
+      'React 19',
+      'TypeScript',
+      'TanStack Query',
+      'Zustand',
+      'Tailwind CSS 4',
+      'Radix UI / shadcn',
+      'Recharts',
+      'React Hook Form',
+      'Zod',
+    ],
+    role: 'Autor · Frontend',
+    client: 'Grit Tecnologia',
+    year: '2026',
+    image: gmpLoginImage,
+  },
+  {
+    name: 'NeoFinance',
+    description:
+      'Plataforma pessoal de gestão financeira que centraliza contas bancárias, cartões, faturas, parcelamentos, dívidas, orçamentos, metas e projeção de fluxo de caixa em um só lugar, com sincronização automática de contas via Open Finance (Pluggy) e um consultor de IA que analisa os dados financeiros do usuário — no lugar de planilhas manuais ou o app isolado de cada banco. A integração com Open Finance resolve o nome e o ícone real da instituição por trás de conectores-proxy, trata webhooks assíncronos de atualização de conta e reconcilia transações sem duplicar. O modelo de permissão multi-workspace é verificado ao vivo no banco — não no JWT — revogando acesso na hora quando alguém é removido, em vez de esperar o token expirar. Produto próprio, em produção desde 14/07/2026, rodando em infraestrutura self-hosted (Hetzner + Docker + Caddy), sem depender de PaaS. Conta com 20 módulos de domínio, suíte de testes automatizados, pipeline de CI/CD com deploy automático e conformidade com LGPD, com aceite de termos validado no backend.',
+    tech: [
+      'TypeScript',
+      'Fastify 5',
+      'Prisma',
+      'PostgreSQL',
+      'Redis',
+      'React',
+      'Vite',
+      'TanStack Query',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Pluggy (Open Finance)',
+      'Ollama (LLM self-hosted)',
+      'Sentry',
+      'Docker',
+      'Caddy',
+    ],
+    role: 'Autor · Fullstack · Produto próprio',
+    year: '2026',
+    demo: 'https://neocofre.com.br',
+  },
   {
     name: 'Astra Bot Loading Page (Next.js)',
     description:
@@ -221,30 +292,41 @@ export const projectItems: ProjectItem[] = [
   {
     name: 'Cafe Hora Certa · Gestão Operacional',
     description:
-        'Painel operacional para cafeterias com KPIs de faturamento diário/mensal, gráficos Recharts interativos, módulo POS com catálogo filtrável, carrinho lateral e modal de checkout, gestão de estoque com busca/categorias, relatórios com exportações PDF/CSV e gerenciamento completo de usuários com avatars, autenticação por sessões e trilhas de auditoria.',
+      'Painel operacional para cafeterias com KPIs de faturamento diário/mensal, gráficos Recharts interativos, módulo POS com catálogo filtrável, carrinho lateral e modal de checkout, gestão de estoque com busca/categorias, relatórios com exportações PDF/CSV e gerenciamento completo de usuários com avatars, autenticação por sessões e trilhas de auditoria.',
     tech: [
-        'React',
-        'TypeScript',
-        'Vite',
-        'styled-components',
-        'Context API',
-        'Recharts',
-        'Node.js',
-        'Express',
-        'MySQL',
-        'Zod'
+      'React',
+      'TypeScript',
+      'Vite',
+      'styled-components',
+      'Context API',
+      'Recharts',
+      'Node.js',
+      'Express',
+      'MySQL',
+      'Zod',
     ],
     role: 'Autor · Fullstack',
     year: '2025',
-    },
+  },
 ]
 
 export const experienceHighlights: ExperienceHighlight[] = [
   {
+    title: 'Desenvolvedor Fullstack Sênior · Grit Tecnologia',
+    period: 'Jun 2026 — Atual',
+    description:
+      'Desenvolvedor sênior responsável, sozinho, pela arquitetura e desenvolvimento dos sistemas internos de mensageria e automação da empresa.',
+    outcomes: [
+      'Arquitetei o grit-whatsapp-service, microserviço que abstrai o provedor de WhatsApp para todos os sistemas internos da empresa',
+      'Construí o GMP Dashboard, painel administrativo com visibilidade em tempo real sobre instâncias, filas e mensagens da plataforma',
+      'Automatizei o monitoramento de royalties de petróleo para 9 municípios com o Agente Royalties, eliminando a conferência manual diária',
+    ],
+  },
+  {
     title: 'Desenvolvedor Fullstack · Autônomo',
     period: '2021 — Atual',
     description:
-      'Liderando entregas de plataformas sob medida com foco em excelência de backend, experiência do desenvolvedor e resultados mensuráveis.',
+      'Lidero entregas de plataformas sob medida para clientes, com foco em arquitetura backend sólida, ferramentas que aceleram o time e resultados que dá pra medir.',
     outcomes: [
       'Escalei suíte de automação processando 1M+ eventos/mês',
       'Desenhei gateways de API modulares que viabilizam integrações fluídas com parceiros',
@@ -252,8 +334,8 @@ export const experienceHighlights: ExperienceHighlight[] = [
     ],
   },
   {
-    title: 'Desenvolvedor Web · Fire Hosting (encerrada)',
-    period: '2025 — Projeto encerrado',
+    title: 'Desenvolvedor Web · Fire Hosting',
+    period: '2025',
     description:
       'Atuei em uma equipe enxuta criando experiências web para clientes de hospedagem, alinhando desenvolvimento e infraestrutura.',
     outcomes: [
@@ -264,7 +346,7 @@ export const experienceHighlights: ExperienceHighlight[] = [
   },
   {
     title: 'Técnico de TI Freelancer',
-    period: '2025 — 2025',
+    period: '2025',
     description:
       'Prestei suporte técnico e consultoria para pequenas empresas, garantindo operação estável e treinamentos práticos.',
     outcomes: [

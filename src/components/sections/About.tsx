@@ -6,9 +6,9 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { education } from '@/utils/portfolio-data'
 
 const summaryPoints = [
-  'Mentalidade backend-first com olhar de designer para fluxo e narrativa',
-  'Arquitetando APIs escaláveis, integrações e sistemas guiados por domínio',
-  'Defendendo clean code, ferramentas sustentáveis e habilitação do time',
+  'Mentalidade backend-first, mas com atenção ao fluxo e à experiência de quem usa',
+  'Arquitetura de APIs escaláveis, integrações e sistemas modelados por domínio',
+  'Clean code, ferramentas sustentáveis e documentação que realmente ajuda o time',
 ]
 
 export const About = () => (
@@ -18,7 +18,7 @@ export const About = () => (
         <SectionHeading
           label="Sobre"
           title="Fullstack por profissão. Backend por paixão."
-          description="Transformo requisitos complexos em plataformas confiáveis. De orquestração de serviços a dashboards imersivos, construo produtos que as equipes podem escalar e confiar."
+          description="Transformo requisitos complexos em sistemas confiáveis — de integrações de backend a dashboards que o time realmente usa no dia a dia."
         />
         <div className="space-y-4">
           {summaryPoints.map((point) => (
@@ -61,14 +61,14 @@ export const About = () => (
         <Chip className="self-start" leadingIcon={<span className="h-2 w-2 rounded-full bg-primary-400" />}>Princípios de atuação</Chip>
         <ul className="space-y-4 text-sm text-white/60">
           <li>• Entregar sistemas calmos e previsíveis que sustentam fluxos críticos de negócio.</li>
-          <li>• Projetar para manutenção: código legível, documentação narrativa, verificações automatizadas.</li>
-          <li>• Defender UX significativa mesmo em ferramentas internas — pensamento de produto não termina na API.</li>
-          <li>• Investir na ergonomia do desenvolvedor: pipelines, observabilidade e ciclos de feedback que destravam equipes.</li>
+          <li>• Projetar para manutenção: código legível, documentação clara, verificações automatizadas.</li>
+          <li>• Cuidar da UX mesmo em ferramentas internas — pensar em produto não termina na API.</li>
+          <li>• Investir em pipelines, observabilidade e ciclos de feedback que destravam o time.</li>
         </ul>
         <div className="rounded-2xl border border-primary-400/40 bg-primary-500/10 p-6 text-sm text-primary-100">
           <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary-200">Foco atual</p>
           <p className="mt-2 text-base text-primary-50">
-            Compor malhas de automação, evoluir design systems e mentorar times que escalam entre web, desktop e mobile.
+            Evoluir a plataforma de mensageria e automações internas da Grit Tecnologia, mantendo design systems consistentes e entregas backend-first em produção.
           </p>
         </div>
       </motion.div>
