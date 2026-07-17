@@ -47,7 +47,7 @@ export const navItems = [
 export const heroMetrics = [
   { label: 'Anos criando sistemas', value: '6+' },
   { label: 'Plataformas entregues', value: 'Web · Desktop · Mobile' },
-  { label: 'Integrações orquestradas', value: '40+ integrações' },
+  { label: 'Integrações orquestradas', value: '200+ integrações' },
 ]
 
 export const heroTags = [
