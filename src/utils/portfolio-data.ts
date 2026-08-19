@@ -145,7 +145,7 @@ export const projectItems: ProjectItem[] = [
       'Evolution API',
     ],
     role: 'Autor · Backend',
-    client: 'Grit Tecnologia',
+    client: 'H&A AF Tecnologia LTDA',
     year: '2026',
   },
   {
@@ -167,7 +167,7 @@ export const projectItems: ProjectItem[] = [
       'GitHub Actions',
     ],
     role: 'Autor · Backend',
-    client: 'Grit Tecnologia',
+    client: 'H&A AF Tecnologia LTDA',
     year: '2026',
   },
   {
@@ -187,7 +187,7 @@ export const projectItems: ProjectItem[] = [
       'Zod',
     ],
     role: 'Autor · Frontend',
-    client: 'Grit Tecnologia',
+    client: 'H&A AF Tecnologia LTDA',
     year: '2026',
     image: gmpLoginImage,
   },
@@ -312,7 +312,7 @@ export const projectItems: ProjectItem[] = [
 
 export const experienceHighlights: ExperienceHighlight[] = [
   {
-    title: 'Desenvolvedor Fullstack Sênior · Grit Tecnologia',
+    title: 'Auxiliar Operacional Administrativo · H&A AF Tecnologia LTDA',
     period: 'Jun 2026 — Atual',
     description:
       'Desenvolvedor sênior responsável, sozinho, pela arquitetura e desenvolvimento dos sistemas internos de mensageria e automação da empresa.',

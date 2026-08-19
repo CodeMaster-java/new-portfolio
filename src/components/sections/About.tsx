@@ -68,7 +68,7 @@ export const About = () => (
         <div className="rounded-2xl border border-primary-400/40 bg-primary-500/10 p-6 text-sm text-primary-100">
           <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary-200">Foco atual</p>
           <p className="mt-2 text-base text-primary-50">
-            Evoluir a plataforma de mensageria e automações internas da Grit Tecnologia, mantendo design systems consistentes e entregas backend-first em produção.
+            Evoluir a plataforma de mensageria e automações internas da H&A AF Tecnologia LTDA, mantendo design systems consistentes e entregas backend-first em produção.
           </p>
         </div>
       </motion.div>
