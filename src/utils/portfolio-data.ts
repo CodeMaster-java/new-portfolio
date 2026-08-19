@@ -342,6 +342,7 @@ export const experienceHighlights: ExperienceHighlight[] = [
       'Construí painéis administrativos e integrações para produtos SaaS de clientes',
       'Automatizei rotinas de deploy e monitoramento em ambiente de hospedagem compartilhada',
       'Colaborei com equipe reduzida para lançar landing pages performáticas sob demanda',
+      'Prestei atendimento ao cliente e resolução de problemas técnicos em ambiente de hospedagem',
     ],
   },
   {
