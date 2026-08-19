@@ -52,7 +52,7 @@ export const Hero = () => {
           variants={fadeVariant}
           className="text-balance text-4xl font-semibold leading-tight text-white md:text-5xl"
         >
-          Construo backends confiáveis que escalam junto com o produto —
+          Construo backends confiáveis que escalam junto com o produto,
           sem virar dor de cabeça pra quem mantém depois.
         </motion.h1>
 
@@ -61,7 +61,7 @@ export const Hero = () => {
           className="max-w-xl text-lg leading-relaxed text-white/70 md:text-xl"
         >
           Sou <strong className="text-white/90">Robson José</strong>, também conhecido como{' '}
-          <strong className="text-white/90">CodeMaster</strong> — desenvolvedor fullstack
+          <strong className="text-white/90">CodeMaster</strong>, desenvolvedor fullstack
           com foco em backend. Atuo na arquitetura de APIs, automações e
           soluções multiplataforma, priorizando confiabilidade, clareza e
           performance.
@@ -139,7 +139,7 @@ export const Hero = () => {
             </div>
 
             <p className="text-balance text-lg leading-relaxed text-white/70">
-              Do banco de dados à interface — cada camada construída
+              Do banco de dados à interface, cada camada construída
               para durar e ser fácil de manter.
             </p>
 

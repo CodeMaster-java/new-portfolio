@@ -60,7 +60,19 @@ export const stackCategories: StackCategory[] = [
   {
     name: 'Backend & Sistemas',
     description: 'Arquiteturas backend resilientes, integrações de sistemas e pipelines de automação.',
-    tools: ['Node.js', 'Python', 'FastAPI', 'Express', 'Java', 'C#', 'Zod', 'REST · Integrations'],
+    tools: [
+      'Node.js',
+      'Python',
+      'FastAPI',
+      'Fastify',
+      'Express',
+      'PHP',
+      'Java',
+      'C#',
+      'Prisma',
+      'Zod',
+      'REST · Integrations',
+    ],
   },
   {
     name: 'Frontend',
@@ -81,6 +93,8 @@ export const stackCategories: StackCategory[] = [
       'Chart.js',
       'styled-components',
       'Recharts',
+      'TanStack Query',
+      'shadcn/ui',
     ],
   },
   {
@@ -97,7 +111,17 @@ export const stackCategories: StackCategory[] = [
   {
     name: 'Dados & Ops',
     description: 'Observabilidade, DevOps enxuto e entrega guiada por qualidade.',
-    tools: ['MySQL', 'SQLite', 'Git & GitHub', 'Linux', 'Docker', 'Gradle', 'CI/CD automation'],
+    tools: [
+      'PostgreSQL',
+      'MySQL',
+      'SQLite',
+      'Redis',
+      'Git & GitHub',
+      'Linux',
+      'Docker',
+      'Gradle',
+      'CI/CD automation',
+    ],
   },
   {
     name: 'Tooling & Media',
@@ -129,7 +153,7 @@ export const projectItems: ProjectItem[] = [
   {
     name: 'Agente Royalties',
     description:
-      'Agente automatizado que consulta diariamente a API da DAF (Banco do Brasil) para acompanhar royalties de petróleo devidos a municípios, calcula variações mês a mês e notifica a diretoria via WhatsApp — eliminando a conferência manual de repasses. O maior desafio foi o parsing dos relatórios da DAF: o valor da parcela vem numa linha sem data própria, exigindo rastrear e "herdar" a data de uma linha anterior de outra rubrica, além de ignorar totalizadores que repetem o mesmo padrão. Também exigiu idempotência (não reconsultar competências já concluídas), detecção de mudança real de valores — a DAF republica dados — e correção de um bug de competência no scheduler. Em produção monitorando 9 municípios do Rio de Janeiro, com suíte de 229+ testes unitários; substitui a checagem manual diária por notificação no WhatsApp com valor, data e variação percentual/histórica.',
+      'Agente automatizado que consulta diariamente a API da DAF (Banco do Brasil) para acompanhar royalties de petróleo devidos a municípios, calcula variações mês a mês e notifica a diretoria via WhatsApp, eliminando a conferência manual de repasses. O maior desafio foi o parsing dos relatórios da DAF: o valor da parcela vem numa linha sem data própria, exigindo rastrear e "herdar" a data de uma linha anterior de outra rubrica, além de ignorar totalizadores que repetem o mesmo padrão. Também exigiu idempotência (não reconsultar competências já concluídas), detecção de mudança real de valores (a DAF republica dados) e correção de um bug de competência no scheduler. Em produção monitorando 9 municípios do Rio de Janeiro, com suíte de 229+ testes unitários; substitui a checagem manual diária por notificação no WhatsApp com valor, data e variação percentual/histórica.',
     tech: [
       'Python 3.12',
       'FastAPI',
@@ -151,7 +175,7 @@ export const projectItems: ProjectItem[] = [
   {
     name: 'grit-whatsapp-service · API interna',
     description:
-      'Microserviço corporativo que abstrai completamente o provedor de WhatsApp (hoje Evolution API) dos sistemas internos da Grit Tecnologia — nenhum sistema cliente fala com o provedor diretamente, então trocar de provedor no futuro não quebra ninguém. Arquitetura em três camadas (Provider → Capability → Dispatch): a Capability Layer resolve o que uma instância suporta sem chamada de rede, e a Dispatch Layer valida e monta o plano de envio completo antes de qualquer ação de negócio ser executada. Pipeline assíncrono com idempotência determinística (dedup por sha256), filas dedicadas com dead-letter queue, e deploy próprio com rollback automático e healthcheck de todos os componentes (containers, Postgres, Redis, API, workers). Já consumido pelo Agente Royalties, com Financeiro, RH, OuroPortal e Vertex Workspace no roadmap. Ainda sem tráfego real de produção — como indicador de maturidade técnica: 50 commits, ~335 arquivos TypeScript, 13 migrations de banco e 67 arquivos de teste automatizado (~58% de cobertura).',
+      'Microserviço corporativo que abstrai completamente o provedor de WhatsApp (hoje Evolution API) dos sistemas internos da H&A AF Tecnologia LTDA: nenhum sistema cliente fala com o provedor diretamente, então trocar de provedor no futuro não quebra ninguém. Arquitetura em três camadas (Provider → Capability → Dispatch): a Capability Layer resolve o que uma instância suporta sem chamada de rede, e a Dispatch Layer valida e monta o plano de envio completo antes de qualquer ação de negócio ser executada. Pipeline assíncrono com idempotência determinística (dedup por sha256), filas dedicadas com dead-letter queue, e deploy próprio com rollback automático e healthcheck de todos os componentes (containers, Postgres, Redis, API, workers). Já consumido pelo Agente Royalties, com Financeiro, RH, OuroPortal e Vertex Workspace no roadmap. Ainda sem tráfego real de produção; como indicador de maturidade técnica: 50 commits, ~335 arquivos TypeScript, 13 migrations de banco e 67 arquivos de teste automatizado (~58% de cobertura).',
     tech: [
       'Node.js 22',
       'TypeScript',
@@ -173,7 +197,7 @@ export const projectItems: ProjectItem[] = [
   {
     name: 'GMP Dashboard · Grit Messaging Platform',
     description:
-      'Painel administrativo web da Grit Messaging Platform. Dá a times técnicos e operacionais da Grit Tecnologia visibilidade e controle sobre instâncias WhatsApp, filas, workers, mensagens, logs e métricas sem precisar acessar o backend diretamente. Consome a API do grit-whatsapp-service através de um client HTTP próprio com interceptors e autenticação por API Key/JWT. Migração progressiva de dados mockados para dados reais em tempo real (filas, throughput de workers), mantendo a UI consistente durante a transição — e contornando o bloqueio de pareamento de dispositivo por passkey/WebAuthn introduzido pelo WhatsApp, que impediu re-parear a instância dedicada nova e forçou manter a instância antiga compartilhada enquanto o problema era investigado.',
+      'Painel administrativo web da Grit Messaging Platform. Dá a times técnicos e operacionais da H&A AF Tecnologia LTDA visibilidade e controle sobre instâncias WhatsApp, filas, workers, mensagens, logs e métricas sem precisar acessar o backend diretamente. Consome a API do grit-whatsapp-service através de um client HTTP próprio com interceptors e autenticação por API Key/JWT. Migração progressiva de dados mockados para dados reais em tempo real (filas, throughput de workers), mantendo a UI consistente durante a transição e contornando o bloqueio de pareamento de dispositivo por passkey/WebAuthn introduzido pelo WhatsApp, que impediu re-parear a instância dedicada nova e forçou manter a instância antiga compartilhada enquanto o problema era investigado.',
     tech: [
       'Next.js 15',
       'React 19',
@@ -194,7 +218,7 @@ export const projectItems: ProjectItem[] = [
   {
     name: 'NeoFinance',
     description:
-      'Plataforma pessoal de gestão financeira que centraliza contas bancárias, cartões, faturas, parcelamentos, dívidas, orçamentos, metas e projeção de fluxo de caixa em um só lugar, com sincronização automática de contas via Open Finance (Pluggy) e um consultor de IA que analisa os dados financeiros do usuário — no lugar de planilhas manuais ou o app isolado de cada banco. A integração com Open Finance resolve o nome e o ícone real da instituição por trás de conectores-proxy, trata webhooks assíncronos de atualização de conta e reconcilia transações sem duplicar. O modelo de permissão multi-workspace é verificado ao vivo no banco — não no JWT — revogando acesso na hora quando alguém é removido, em vez de esperar o token expirar. Produto próprio, em produção desde 14/07/2026, rodando em infraestrutura self-hosted (Hetzner + Docker + Caddy), sem depender de PaaS. Conta com 20 módulos de domínio, suíte de testes automatizados, pipeline de CI/CD com deploy automático e conformidade com LGPD, com aceite de termos validado no backend.',
+      'Plataforma pessoal de gestão financeira que centraliza contas bancárias, cartões, faturas, parcelamentos, dívidas, orçamentos, metas e projeção de fluxo de caixa em um só lugar, com sincronização automática de contas via Open Finance (Pluggy) e um consultor de IA que analisa os dados financeiros do usuário, no lugar de planilhas manuais ou o app isolado de cada banco. A integração com Open Finance resolve o nome e o ícone real da instituição por trás de conectores-proxy, trata webhooks assíncronos de atualização de conta e reconcilia transações sem duplicar. O modelo de permissão multi-workspace é verificado ao vivo no banco, não no JWT, revogando acesso na hora quando alguém é removido, em vez de esperar o token expirar. Produto próprio, em produção desde 14/07/2026, rodando em infraestrutura self-hosted (Hetzner + Docker + Caddy), sem depender de PaaS. Conta com 20 módulos de domínio, suíte de testes automatizados, pipeline de CI/CD com deploy automático e conformidade com LGPD, com aceite de termos validado no backend.',
     tech: [
       'TypeScript',
       'Fastify 5',
@@ -313,7 +337,7 @@ export const projectItems: ProjectItem[] = [
 export const experienceHighlights: ExperienceHighlight[] = [
   {
     title: 'Auxiliar Operacional Administrativo · H&A AF Tecnologia LTDA',
-    period: 'Jun 2026 — Atual',
+    period: 'Jun 2026 - Atual',
     description:
       'Desenvolvedor sênior responsável, sozinho, pela arquitetura e desenvolvimento dos sistemas internos de mensageria e automação da empresa.',
     outcomes: [
@@ -324,7 +348,7 @@ export const experienceHighlights: ExperienceHighlight[] = [
   },
   {
     title: 'Desenvolvedor Fullstack · Autônomo',
-    period: '2021 — Atual',
+    period: '2021 - Atual',
     description:
       'Lidero entregas de plataformas sob medida para clientes, com foco em arquitetura backend sólida, ferramentas que aceleram o time e resultados que dá pra medir.',
     outcomes: [

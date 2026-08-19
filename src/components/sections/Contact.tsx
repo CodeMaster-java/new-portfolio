@@ -10,7 +10,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { contactChannels } from '@/utils/portfolio-data'
 
 const CONTACT_EMAIL = 'robsonjosecorreacarvalho@gmail.com'
-const CONTACT_SUBJECT = 'Possível colaboração técnica — Robson José'
+const CONTACT_SUBJECT = 'Possível colaboração técnica - Robson José'
 const CONTACT_BODY = `Olá Robson,
 
 Gostaria de conversar sobre um possível projeto de desenvolvimento fullstack.

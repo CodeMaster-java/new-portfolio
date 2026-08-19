@@ -18,7 +18,7 @@ export const About = () => (
         <SectionHeading
           label="Sobre"
           title="Fullstack por profissão. Backend por paixão."
-          description="Transformo requisitos complexos em sistemas confiáveis — de integrações de backend a dashboards que o time realmente usa no dia a dia."
+          description="Transformo requisitos complexos em sistemas confiáveis: de integrações de backend a dashboards que o time realmente usa no dia a dia."
         />
         <div className="space-y-4">
           {summaryPoints.map((point) => (
@@ -62,7 +62,7 @@ export const About = () => (
         <ul className="space-y-4 text-sm text-white/60">
           <li>• Entregar sistemas calmos e previsíveis que sustentam fluxos críticos de negócio.</li>
           <li>• Projetar para manutenção: código legível, documentação clara, verificações automatizadas.</li>
-          <li>• Cuidar da UX mesmo em ferramentas internas — pensar em produto não termina na API.</li>
+          <li>• Cuidar da UX mesmo em ferramentas internas: pensar em produto não termina na API.</li>
           <li>• Investir em pipelines, observabilidade e ciclos de feedback que destravam o time.</li>
         </ul>
         <div className="rounded-2xl border border-primary-400/40 bg-primary-500/10 p-6 text-sm text-primary-100">
