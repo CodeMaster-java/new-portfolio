@@ -10,7 +10,7 @@ type ChipProps = PropsWithChildren<{
 export const Chip = ({ className, leadingIcon, children }: ChipProps) => (
   <span
     className={cn(
-      'inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-white/70 backdrop-blur-lg dark:text-white/50',
+      'inline-flex items-center gap-2 rounded border border-ink-700 bg-ink-900 px-2.5 py-1 font-mono text-[0.65rem] font-medium uppercase tracking-[0.15em] text-paper-400',
       className,
     )}
   >

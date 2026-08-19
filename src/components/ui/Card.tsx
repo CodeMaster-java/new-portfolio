@@ -14,13 +14,10 @@ export const Card = ({ className, as: As = 'div', media, children }: CardProps) 
   return (
     <Component
       className={cn(
-        'group relative overflow-hidden rounded-3xl border border-white/5 bg-surface-800/60 backdrop-blur transition-all duration-300 hover:border-white/15 hover:bg-surface-800/80',
+        'relative overflow-hidden rounded border border-ink-700 bg-ink-900 transition-colors duration-300 hover:border-ink-600',
         className,
       )}
     >
-      <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-        <div className="pattern-mask absolute inset-0 translate-y-4 bg-[radial-gradient(circle_at_center,_rgba(109,61,250,0.14),_transparent_65%)]" />
-      </div>
       {media}
       <div className="relative flex flex-col gap-5 p-6 md:p-8">{children}</div>
     </Component>

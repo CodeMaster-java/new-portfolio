@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+@import '@fontsource/archivo/600.css';
+@import '@fontsource/archivo/700.css';
+@import '@fontsource/archivo/800.css';
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/600.css';
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +13,8 @@
 
 :root {
   color-scheme: dark;
+  scrollbar-color: #34363c #0a0b0d;
+  scrollbar-width: thin;
 }
 
 html {
@@ -14,8 +23,32 @@ html {
 }
 
 body {
-  @apply bg-surface-900 text-surface-50 font-sans antialiased;
+  @apply bg-ink-950 text-paper-200 font-sans antialiased;
   overflow-x: hidden;
+}
+
+/* Custom scrollbar (WebKit) — thin, tokens-matched, amber on hover */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0b0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #34363c;
+  border: 2px solid #0a0b0d;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffb020;
+}
+
+::-webkit-scrollbar-corner {
+  background: #0a0b0d;
 }
 
 #root {
@@ -24,35 +57,57 @@ body {
 }
 
 ::selection {
-  @apply bg-primary-400 text-surface-900;
+  @apply bg-amber-500 text-ink-950;
 }
 
-.dark body {
-  @apply bg-surface-900 text-surface-50;
+/* Fine hairline grid, used as a quiet technical backdrop (no color, no glow) */
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-.light body {
-  @apply bg-surface-50 text-surface-900;
-}
-
-.gradient-border {
+/* Technical corner brackets, drawn on the element's own box */
+.corner-frame {
   position: relative;
-  border-radius: 9999px;
-  background: linear-gradient(120deg, rgba(109, 61, 250, 0.65), rgba(41, 197, 255, 0.55));
-  padding: 1px;
 }
 
-.gradient-border > span {
-  display: block;
-  border-radius: 9999px;
-  background: rgba(15, 16, 24, 0.8);
-  padding: 0.25rem 0.75rem;
+.corner-frame::before,
+.corner-frame::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  border-color: rgba(255, 176, 32, 0.5);
 }
 
-.light .gradient-border > span {
-  background: rgba(255, 255, 255, 0.85);
+.corner-frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1px solid;
+  border-left: 1px solid;
 }
 
-.pattern-mask {
-  mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+.corner-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.hairline {
+  @apply border border-ink-700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

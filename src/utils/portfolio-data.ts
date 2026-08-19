@@ -1,7 +1,13 @@
 import { Mail, MessageCircle, PhoneCall, type LucideIcon } from 'lucide-react'
 
+import astrabotImage from '@/assets/projects/astrabot.png'
+import botdeckImage from '@/assets/projects/botdeck-pagina.png'
 import cdrLoginImage from '@/assets/projects/cdr-login.png'
 import gmpLoginImage from '@/assets/projects/gmp-login.png'
+import neocofreLoginImage from '@/assets/projects/neocofre-login.png'
+import portfolio1HomeImage from '@/assets/projects/portfolio1-home.png'
+import worktimeLoginImage from '@/assets/projects/worktime-login.png'
+import zedToolboxImage from '@/assets/projects/zedtoolbox.png'
 
 export type StackCategory = {
   name: string
@@ -239,6 +245,7 @@ export const projectItems: ProjectItem[] = [
     role: 'Autor · Fullstack · Produto próprio',
     year: '2026',
     demo: 'https://neocofre.com.br',
+    image: neocofreLoginImage,
   },
   {
     name: 'Astra Bot Loading Page (Next.js)',
@@ -249,6 +256,7 @@ export const projectItems: ProjectItem[] = [
     year: '2026',
     link: 'https://github.com/CodeMaster-java/astrabot-loadingpage.git',
     demo: 'https://astrabot-loadingpage.vercel.app/',
+    image: astrabotImage,
   },
   {
     name: 'YouTube Converter (Electron + Python)',
@@ -266,7 +274,7 @@ export const projectItems: ProjectItem[] = [
     tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Context API'],
     role: 'Autor · Fullstack',
     year: '2024',
-    link: 'https://github.com/CodeMaster-java/PortFolio',
+    image: portfolio1HomeImage,
   },
   {
     name: 'Barbearia Pro',
@@ -285,6 +293,7 @@ export const projectItems: ProjectItem[] = [
     tech: ['React', 'TypeScript', 'PHP', 'MySQL', 'Tailwind CSS', 'Vite', 'Chart.js'],
     role: 'Autor · Fullstack',
     year: '2025',
+    image: worktimeLoginImage,
   },
   {
     name: 'BotDeck · Discord Bot Manager',
@@ -294,6 +303,7 @@ export const projectItems: ProjectItem[] = [
     role: 'Autor · Fullstack',
     year: '2025',
     link: 'https://github.com/CodeMaster-java/BotDeck',
+    image: botdeckImage,
   },
   {
     name: 'MoneyFlow Finance Manager',
@@ -312,6 +322,7 @@ export const projectItems: ProjectItem[] = [
     year: '2025',
     link: 'https://github.com/CodeMaster-java/ZedToolbox',
     demo: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3623287081',
+    image: zedToolboxImage,
   },
   {
     name: 'Cafe Hora Certa · Gestão Operacional',

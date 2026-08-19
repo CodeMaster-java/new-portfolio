@@ -16,6 +16,7 @@ export const About = () => (
     <Container className="grid gap-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-start">
       <div className="space-y-8">
         <SectionHeading
+          index={1}
           label="Sobre"
           title="Fullstack por profissão. Backend por paixão."
           description="Transformo requisitos complexos em sistemas confiáveis: de integrações de backend a dashboards que o time realmente usa no dia a dia."
@@ -25,10 +26,9 @@ export const About = () => (
             <motion.p
               key={point}
               initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.6 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-base leading-relaxed text-white/70"
+              className="text-base leading-relaxed text-paper-400"
             >
               {point}
             </motion.p>
@@ -39,36 +39,37 @@ export const About = () => (
             <motion.div
               key={item.program}
               initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="rounded-3xl border border-white/5 bg-surface-800/50 p-6"
+              className="hairline rounded bg-ink-900 p-6"
             >
-              <p className="text-sm uppercase tracking-[0.3em] text-white/40">Formação</p>
-              <p className="mt-4 text-lg font-semibold text-white">{item.program}</p>
-              <p className="mt-2 text-sm text-white/50">{item.status}</p>
+              <p className="font-mono text-xs uppercase tracking-[0.25em] text-paper-400">Formação</p>
+              <p className="mt-4 text-lg font-semibold text-paper-50">{item.program}</p>
+              <p className="mt-2 text-sm text-paper-400">{item.status}</p>
             </motion.div>
           ))}
         </div>
       </div>
       <motion.div
         initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col gap-6 rounded-3xl border border-white/5 bg-gradient-to-br from-surface-800/80 via-surface-800/40 to-surface-900/80 p-8"
+        className="hairline flex flex-col gap-6 rounded bg-ink-900 p-8"
       >
-        <Chip className="self-start" leadingIcon={<span className="h-2 w-2 rounded-full bg-primary-400" />}>Princípios de atuação</Chip>
-        <ul className="space-y-4 text-sm text-white/60">
+        <Chip className="self-start" leadingIcon={<span className="h-1.5 w-1.5 bg-amber-500" />}>
+          Princípios de atuação
+        </Chip>
+        <ul className="space-y-4 text-sm text-paper-400">
           <li>• Entregar sistemas calmos e previsíveis que sustentam fluxos críticos de negócio.</li>
           <li>• Projetar para manutenção: código legível, documentação clara, verificações automatizadas.</li>
           <li>• Cuidar da UX mesmo em ferramentas internas: pensar em produto não termina na API.</li>
           <li>• Investir em pipelines, observabilidade e ciclos de feedback que destravam o time.</li>
         </ul>
-        <div className="rounded-2xl border border-primary-400/40 bg-primary-500/10 p-6 text-sm text-primary-100">
-          <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary-200">Foco atual</p>
-          <p className="mt-2 text-base text-primary-50">
-            Evoluir a plataforma de mensageria e automações internas da H&A AF Tecnologia LTDA, mantendo design systems consistentes e entregas backend-first em produção.
+        <div className="rounded border border-petrol-500/40 bg-petrol-500/10 p-6 text-sm">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-petrol-400">Foco atual</p>
+          <p className="mt-2 text-base text-paper-50">
+            Evoluir a plataforma de mensageria e automações internas da H&A AF Tecnologia LTDA, mantendo design systems
+            consistentes e entregas backend-first em produção.
           </p>
         </div>
       </motion.div>

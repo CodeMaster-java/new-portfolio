@@ -5,15 +5,12 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes, PropsWithChildren } fr
 type Variant = 'primary' | 'secondary' | 'ghost'
 
 const baseStyles =
-  'inline-flex min-h-11 items-center gap-2 rounded-full border border-transparent px-5 py-2.5 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-0'
+  'inline-flex min-h-11 items-center gap-2 rounded border border-transparent px-5 py-2.5 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-0'
 
 const variantStyles: Record<Variant, string> = {
-  primary:
-    'bg-primary-500 text-white shadow-glow hover:bg-primary-400 hover:text-surface-900 dark:hover:bg-primary-400',
-  secondary:
-    'bg-surface-800/70 text-surface-50 border-white/10 hover:border-white/25 hover:bg-surface-800/90',
-  ghost:
-    'bg-transparent text-surface-50 hover:text-primary-300 hover:bg-white/5 border-white/10',
+  primary: 'bg-amber-500 text-ink-950 hover:bg-amber-400',
+  secondary: 'bg-ink-900 text-paper-50 border-ink-700 hover:border-ink-600 hover:bg-ink-800',
+  ghost: 'bg-transparent text-paper-50 border-ink-700 hover:text-amber-400 hover:bg-white/5',
 }
 
 type BaseProps = PropsWithChildren<{
